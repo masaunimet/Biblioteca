@@ -1,5 +1,31 @@
+from numpy import append
 from List import *
 from Functions import *
+
+
+
+prueba = Linked_list()
+prueba2 = Linked_list()
+
+
+#########################################################
+
+prueba.append(1)
+prueba.append(2)
+prueba.append(3)
+prueba.append(4)
+prueba.append(5)
+
+prueba2.append(6)
+prueba2.append(7)
+prueba2.append(8)
+
+
+prueba.print_list()
+
+print('--------------------------------')
+
+#########################################################
 
 lineas_Facheras = "------------------------------------------------------"
 mensaje_Intro = "Bienvenido a la Libreria Publica de Manhattan!\n\nQue desea hacer?\n1. Insertar un nuevo libro\n2. Buscar un libro\n3. Prestar un libro\n4. Devolver un libro\n5. Eliminar libro"

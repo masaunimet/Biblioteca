@@ -1,3 +1,4 @@
+
 class Node:
     def __init__(self, data = None):
         self.data = data
@@ -32,6 +33,7 @@ class Linked_list:
 
 
     #No sirve - borrar
+
     def append_node(self, data):
         new_node = Node(data)
         if self.size == 0:
