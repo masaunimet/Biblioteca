@@ -7,12 +7,6 @@ prueba = Linked_list()
 prueba2 = Linked_list()
 
 
-#########################################################
-
-print('--------------------------------')
-
-#########################################################
-
 lineas_Facheras = "------------------------------------------------------"
 mensaje_Intro = "Bienvenido a la Libreria Publica de Manhattan!\n\nQue desea hacer?\n1. Insertar un nuevo libro\n2. Buscar un libro\n3. Prestar un libro\n4. Devolver un libro\n5. Eliminar libro"
 
@@ -24,7 +18,7 @@ def Inicio():
 def Main():
 
     Inicio()
-    opcion = input('Ingrese el numero de la operacion:' )
+    opcion = input('Ingrese el numero de la operacion: ' )
 
     if opcion.isdigit :
         
