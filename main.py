@@ -33,9 +33,24 @@ prueba.append(21)
 prueba.append(54)
 
 prueba.print_list()
-print(prueba.Search(54))
+prueba.Actualizar(prueba.Search(21),34)
 print('--------------------------------')
-
+prueba.print_list()
+print('--------------------------------')
+prueba.Delete(34)
+prueba.print_list()
+print('--------------------------------')
+prueba.Delete(20)
+prueba.print_list()
+print('--------------------------------')
+prueba.Delete(19)
+prueba.print_list()
+print('--------------------------------')
+prueba.append(18)
+prueba.append(19)
+prueba.append(20)
+prueba.append(21)
+prueba.append(54)
 #########################################################
 
 lineas_Facheras = "------------------------------------------------------"
