@@ -9,19 +9,6 @@ prueba2 = Linked_list()
 
 #########################################################
 
-prueba.append(1)
-prueba.append(2)
-prueba.append(3)
-prueba.append(4)
-prueba.append(5)
-
-prueba2.append(6)
-prueba2.append(7)
-prueba2.append(8)
-
-
-prueba.print_list()
-
 print('--------------------------------')
 
 #########################################################
