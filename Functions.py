@@ -1,3 +1,6 @@
+import pickle
+
+
 #Función hash, toma el key, lo convierte en su equivalente ascii y toma el residuo de la división entre 2
 
 def hash_function(string):
@@ -8,3 +11,12 @@ def hash_function(string):
 
     return hash_value
         
+
+def write_on_file(list):
+    with open('database.txt','wb') as f:
+        pickle.dump(list,f)
+
+def read_file():
+    with open('database.txt', 'rb') as f:
+        lista = pickle.load(f)
+        return lista

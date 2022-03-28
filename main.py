@@ -1,5 +1,6 @@
 from List import *
 from Functions import *
+import pickle
 
 
 
@@ -30,11 +31,10 @@ prueba.append(18)
 prueba.append(19)
 prueba.append(20)
 prueba.append(21)
-prueba.append(54)
 
-prueba.print_list()
-print(prueba.Search(54))
-print('--------------------------------')
+
+
+print('--------------------------------\n')
 
 #########################################################
 
