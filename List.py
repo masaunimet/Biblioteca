@@ -135,7 +135,7 @@ class Linked_list:
         else:
             self.size -=1
 
-    #
+    #Quitar overflow sin contenido
 
     def __Limpiar(self):
         if self.overflow != None and self.overflow.first == None:

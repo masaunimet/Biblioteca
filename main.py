@@ -1,7 +1,6 @@
+
 from List import *
 from Functions import *
-
-
 
 prueba = Linked_list()
 prueba2 = Linked_list()
@@ -51,6 +50,8 @@ prueba.append(19)
 prueba.append(20)
 prueba.append(21)
 prueba.append(54)
+print('--------------------------------')
+
 #########################################################
 
 lineas_Facheras = "------------------------------------------------------"
@@ -87,19 +88,48 @@ def Opcion(opcion):
             print("La cota es un codigo unico que representa cada uno de los libros en la bibloteca\nesta conformado por 6 letras al inicio y 2 digitos")
             cota = input("Ingrese la cota del libro (ejem: MATBYZ01): ")
 
-            if (not cota[0:6].isalpha) and (not cota[6:].isdigit):
+            if (not cota[0:6].isalpha) and (not cota[6:].isdigit()):
 
                 break
+            else:
+                cota = int(cota)
 
-        print("El titulo es un nombre unico de libro con un maximo de 30 caracteres")
-        titulo = input("Ingrese el titulo del libro (ejem: El Principito): ")
+        while True:
+            print("El titulo es un nombre unico de libro con un maximo de 30 caracteres")
+            titulo = input("Ingrese el titulo del libro (ejem: El Principito): ")
+            
+            if(not len(titulo) <= 30):
+               
+                break
+            else:
+                titulo = int(titulo)
 
-        print("El serial de 12 digitos, es un numero unico de libro puesto por la editorial")
-        serial = input("Ingrese el serial del libro (ejem: 000012345678): ")
+        while True:
+            print("El serial de 12 digitos, es un numero unico de libro puesto por la editorial")
+            serial = input("Ingrese el serial del libro (ejem: 000012345678): ")
+               
+            if(not len(serial) <= 10) or (not serial.isdigit()):
+                
+                break
+            else:
+                serial = int(serial)
 
-        disponibles = input("Ingrese el numero de libros disponibles: ")
-
-        prestados = input("Ingrese el numero de libros prestados: ")
+        while True:
+            
+            disponibles = input("Ingrese el numero de libros disponibles: ")
+            
+            if(not disponibles.isdigit()):
+                    
+                break
+                
+        while True:
+            
+            prestados = input("Ingrese el numero de libros prestados: ")
+            
+            if(not prestados.isdigit()):
+                
+                break
+                
     elif int(opcion) ==2:
 
         print("buscar libro")
@@ -112,7 +142,25 @@ def Opcion(opcion):
     else:
 
         print("Eliminar libro")
+    
+    titulo = int(titulo)
+    cota = int(cota)
+    serial = int(serial)
+    matriz1(cota, titulo)
+    matriz2(serial, cota)
 
+def matriz1(cota, titulo):
+    
+    arr = np.array([[cota, titulo]])        
+    
+def matriz2(serial, cota):
+    
+    arr = np.array([[serial, cota]])        
+
+def ordenar(arr):
+
+    arr[arr[:, 0].argsort()]
+    
 def Dato_mal_suministrado():
 
     print("El dato que se le ha pedido suministrar es incorrecto, vuelva a intentarlo")
