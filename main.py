@@ -45,6 +45,8 @@ def Opcion(opcion):
 
                 break
 
+        hash_value = hash_function(cota)
+
         print("El titulo es un nombre unico de libro con un maximo de 30 caracteres")
         titulo = input("Ingrese el titulo del libro (ejem: El Principito): ")
 
