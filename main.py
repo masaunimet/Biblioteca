@@ -14,14 +14,26 @@ prueba.append(2)
 prueba.append(3)
 prueba.append(4)
 prueba.append(5)
-
-prueba2.append(6)
-prueba2.append(7)
-prueba2.append(8)
-
+prueba.append(6)
+prueba.append(7)
+prueba.append(8)
+prueba.append(9)
+prueba.append(10)
+prueba.append(11)
+prueba.append(12)
+prueba.append(13)
+prueba.append(14)
+prueba.append(15)
+prueba.append(16)
+prueba.append(17)
+prueba.append(18)
+prueba.append(19)
+prueba.append(20)
+prueba.append(21)
+prueba.append(54)
 
 prueba.print_list()
-
+print(prueba.Search(54))
 print('--------------------------------')
 
 #########################################################
