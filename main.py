@@ -1,6 +1,7 @@
 
 from List import *
 from Functions import *
+import numpy as np
 
 prueba = Linked_list()
 prueba2 = Linked_list()
@@ -88,11 +89,12 @@ def Opcion(opcion):
             print("La cota es un codigo unico que representa cada uno de los libros en la bibloteca\nesta conformado por 6 letras al inicio y 2 digitos")
             cota = input("Ingrese la cota del libro (ejem: MATBYZ01): ")
 
-            if (not cota[0:6].isalpha) and (not cota[6:].isdigit()):
+            cota_numero = cota[6:]
+            cota_letras = cota[0:6]
+            
+            if (not cota_numero.isalpha()) and (not cota_letras.isdigit()):
 
                 break
-            else:
-                cota = int(cota)
 
         while True:
             print("El titulo es un nombre unico de libro con un maximo de 30 caracteres")

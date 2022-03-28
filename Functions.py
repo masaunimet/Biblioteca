@@ -1,6 +1,3 @@
-from copyreg import pickle
-
-
 import pickle
 
 #Función hash, toma el key, lo convierte en su equivalente ascii y toma el residuo de la división entre 2
