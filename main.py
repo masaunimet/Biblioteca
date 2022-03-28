@@ -41,7 +41,13 @@ def Opcion(opcion):
             print("La cota es un codigo unico que representa cada uno de los libros en la bibloteca\nesta conformado por 6 letras al inicio y 2 digitos")
             cota = input("Ingrese la cota del libro (ejem: MATBYZ01): ")
 
-            if (not cota[0:6].isalpha) and (not cota[6:].isdigit):
+            cota_numero = cota[6:]
+            cota_letras = cota[0:6]
+
+            print(cota_numero)
+            print(cota_letras)
+
+            if (not cota_numero.isalpha()) and (not cota_letras.isdigit()):
 
                 break
 
