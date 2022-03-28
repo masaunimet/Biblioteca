@@ -1,4 +1,3 @@
-from numpy import append
 from List import *
 from Functions import *
 
