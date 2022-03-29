@@ -21,4 +21,13 @@ def read_file():
     with open('database.txt', 'rb') as f:
         lista = pickle.load(f)
         return lista
+
+def write_on_file2(list):
+    with open('database2.txt','wb') as f:
+        pickle.dump(list,f)
+
+def read_file2():
+    with open('database2.txt', 'rb') as f:
+        lista = pickle.load(f)
+        return lista
         

@@ -1,8 +1,9 @@
 from List import *
 from Functions import *
 
-hash_list = Linked_list()
-hash_list2 = Linked_list()
+
+hash_list = read_file()
+hash_list2 = read_file2()
 indexing_titulo = []
 indexing_serial = []
 
@@ -118,8 +119,10 @@ def Opcion(opcion):
         contenido_serial = [serial,cota]
         if hash ==0:
             hash_list.append(contenido)
+            write_on_file(hash_list)
         else:
             hash_list2.append(contenido)
+            write_on_file2(hash_list2)
         indexing_titulo.append(contenido_titulo)
         quicksort(indexing_titulo,0, len(indexing_titulo) - 1)
         indexing_serial.append(contenido_serial)
@@ -257,9 +260,11 @@ def Opcion(opcion):
                                 disponibles = resultado.data[3] -1
                                 disponibles_nodo = [resultado.data[0],resultado.data[1],resultado.data[2],disponibles,resultado.data[4]]
                                 hash_list.Actualizar(resultado,disponibles_nodo)
+                                write_on_file(hash_list)
                                 prestados = resultado.data[4] +1
                                 disponibles_nodo = [resultado.data[0],resultado.data[1],resultado.data[2],resultado.data[3],prestados]
                                 hash_list.Actualizar(resultado,disponibles_nodo)
+                                write_on_file(hash_list)
                                 print(f"\nSe presto el libro: {resultado.data[1]} , tiene {disponibles} disponibles y {prestados} prestados")
                             else:
                                 print("Ya no se pueden prestar mas libros")
@@ -275,9 +280,11 @@ def Opcion(opcion):
                                 disponibles = resultado.data[3] -1
                                 disponibles_nodo = [resultado.data[0],resultado.data[1],resultado.data[2],disponibles,resultado.data[4]]
                                 hash_list2.Actualizar(resultado,disponibles_nodo)
+                                write_on_file2(hash_list)
                                 prestados = resultado.data[4] +1
                                 disponibles_nodo = [resultado.data[0],resultado.data[1],resultado.data[2],resultado.data[3],prestados]
                                 hash_list2.Actualizar(resultado,disponibles_nodo)
+                                write_on_file2(hash_list2)
                                 print(f"\nSe presto el libro: {resultado.data[1]} , tiene {disponibles} disponibles y {prestados} prestados")
                             else:
                                 print("Ya no se pueden prestar mas libros")
@@ -310,6 +317,7 @@ def Opcion(opcion):
                                 prestados = resultado.data[4] -1
                                 disponibles_nodo = [resultado.data[0],resultado.data[1],resultado.data[2],resultado.data[3],prestados]
                                 hash_list.Actualizar(resultado,disponibles_nodo)
+                                write_on_file(hash_list)
                                 print(f"\nSe devolvio el libro: {resultado.data[1]} , tiene {disponibles} disponibles y {prestados} prestados")
                             else:
                                 print("Ya no se pueden devolver mas libros")
@@ -328,6 +336,7 @@ def Opcion(opcion):
                                 prestados = resultado.data[4] -1
                                 disponibles_nodo = [resultado.data[0],resultado.data[1],resultado.data[2],resultado.data[3],prestados]
                                 hash_list2.Actualizar(resultado,disponibles_nodo)
+                                write_on_file2(hash_list2)
                                 print(f"\nSe devolvio el libro: {resultado.data[1]} , tiene {disponibles} disponibles y {prestados} prestados")
                             else:
                                 print("Ya no se pueden devolver mas libros")
@@ -354,6 +363,7 @@ def Opcion(opcion):
                         resultado = hash_list.Search(cota)
                         if resultado != None:
                             hash_list.Delete(resultado.data)
+                            write_on_file(hash_list)
                             index_serial=busquedaBinariaindex(int(resultado.data[2]),0,len(indexing_serial),0,indexing_serial)
                             index_titulo=busquedaBinariaindex2(resultado.data[1],0,len(indexing_titulo),0,indexing_titulo)
                             indexing_serial.pop(index_serial)
@@ -370,6 +380,7 @@ def Opcion(opcion):
                         resultado = hash_list2.Search(cota)
                         if resultado != None:
                             hash_list2.Delete(resultado.data)
+                            write_on_file2(hash_list2)
                             index_serial=busquedaBinariaindex(int(resultado.data[2]),0,len(indexing_serial),0,indexing_serial)
                             index_titulo=busquedaBinariaindex2(resultado.data[1],0,len(indexing_titulo),0,indexing_titulo)
                             indexing_serial.pop(index_serial)
