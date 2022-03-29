@@ -155,6 +155,15 @@ def ordenar(arr):
     arr[arr[:, 0].argsort()]
 
 #Agregar a matriz 
+cota = input("Cota")
+cota = int(cota)
+titulo = input("titulo")
+L = "Cota"
+K = "Titulo"
+arr = np.array([[L, K]])
+AgregarMatriz1(arr, cota, titulo)
+BuscarMatriz1(arr, cota, titulo)
+EliminarMatriz1(arr, cota, titulo)
 
 def AgregarMatriz1(arr, cota, titulo):
 
