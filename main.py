@@ -1,13 +1,12 @@
-
+import numpy as np
 from List import *
 from Functions import *
-import numpy as np
 
 prueba = Linked_list()
 prueba2 = Linked_list()
 
 
-#########################################################
+ #########################################################
 
 prueba.append(1)
 prueba.append(2)
@@ -149,19 +148,38 @@ def Opcion(opcion):
     cota = int(cota)
     serial = int(serial)
     matriz1(cota, titulo)
-    matriz2(serial, cota)
+    matriz2(cota, serial)
 
 def matriz1(cota, titulo):
     
     arr = np.array([[cota, titulo]])        
     
-def matriz2(serial, cota):
+def matriz2(cota, serial):
     
-    arr = np.array([[serial, cota]])        
+    arr = np.array([[cota, serial]])        
 
 def ordenar(arr):
 
     arr[arr[:, 0].argsort()]
+
+def AgregarMatriz1(arr, cota, titulo):
+
+    row = np.array([[cota, titulo]])
+    arr = np.vstack([arr, row])
+    print(arr)
+
+def BuscarMatriz1(arr, cota, titulo):
+   
+    index = np.where((arr == (cota, titulo)).all(axis=1))
+    print("Se encontro el elemento")
+    print(arr)
+
+def EliminarMatriz1(arr, cota, titulo):
+
+    index = np.where((arr == (cota, titulo)).all(axis=1))
+    delete = np.delete(arr, index, 0)
+    print("Se elimino el elemento")
+    print(arr)
     
 def Dato_mal_suministrado():
 
