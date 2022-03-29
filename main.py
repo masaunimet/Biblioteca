@@ -169,9 +169,42 @@ titulo = input("titulo")
 L = "Cota"
 K = "Titulo"
 arr = np.array([[L, K]])
-AgregarMatriz1(arr, cota, titulo)
-BuscarMatriz1(arr, cota, titulo)
-EliminarMatriz1(arr, cota, titulo)
+
+
+#AgregarMatriz1(arr, cota, titulo)
+#BuscarMatriz1(arr, cota, titulo)
+#EliminarMatriz1(arr, cota, titulo)
+
+titulo = int(titulo)
+cota = int(cota)
+#serial = int(serial)
+#matriz1(cota, titulo)
+#matriz2(cota, serial)
+
+
+#Para matriz 1
+
+#Crear matriz cota - titulo
+
+def matriz1(cota, titulo):
+    
+    arr = np.array([[cota, titulo]])
+    return arr        
+    
+#Crear matriz cota - serial
+
+def matriz2(cota, serial):
+    
+    arr = np.array([[cota, serial]])
+    return arr        
+
+#Ordenar por cota
+
+def ordenar(arr):
+
+    arr[arr[:, 0].argsort()]
+
+#Agregar a matriz 
 
 def AgregarMatriz1(arr, cota, titulo):
 
@@ -179,11 +212,15 @@ def AgregarMatriz1(arr, cota, titulo):
     arr = np.vstack([arr, row])
     print(arr)
 
+#Buscar y retorna la posicion en la matriz
+
 def BuscarMatriz1(arr, cota, titulo):
    
     index = np.where((arr == (cota, titulo)).all(axis=1))
     print("Se encontro el elemento")
     print(arr)
+    return index
+
 
 def EliminarMatriz1(arr, cota, titulo):
 
@@ -191,7 +228,46 @@ def EliminarMatriz1(arr, cota, titulo):
     delete = np.delete(arr, index, 0)
     print("Se elimino el elemento")
     print(arr)
+
+
+#Para matriz 2
     
+#Elimina matriz segun el indice
+
+def EliminarMatriz2(arr, serial, titulo):
+
+    index = np.where((arr == (serial, titulo)).all(axis=1))
+    delete = np.delete(arr, index, 0)
+    print("Se elimino el elemento")
+    print(arr)
+
+
+#Agregar a matriz 
+
+def AgregarMatriz2(arr, serial, cota):
+
+    row = np.array([[serial, cota]])
+    arr = np.vstack([arr, row])
+    print(arr)
+
+#Buscar y retorna la posicion en la matriz
+
+def BuscarMatriz2(arr, serial, cota):
+   
+    index = np.where((arr == (serial, cota)).all(axis=1))
+    print("Se encontro el elemento")
+    print(arr)
+    return index
+    
+#Elimina matriz segun el indice
+
+def EliminarMatriz2(arr, serial, cota):
+
+    index = np.where((arr == (serial, cota)).all(axis=1))
+    delete = np.delete(arr, index, 0)
+    print("Se elimino el elemento")
+    print(arr)
+
 def Dato_mal_suministrado():
 
     print("El dato que se le ha pedido suministrar es incorrecto, vuelva a intentarlo")
