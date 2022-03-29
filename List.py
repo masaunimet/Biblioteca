@@ -13,6 +13,13 @@ class Linked_list:
         self.overflow = None
         self.size = 0
 
+    #si esta vacia
+    def Vacio(self):
+        if self.size ==0:
+            return True
+        else:
+            return False
+
     #agarrar la altura más alta de los overflow o base
     def GetLastAltura(self):
         if self.overflow != None:
@@ -56,10 +63,10 @@ class Linked_list:
     def Search(self,data):
         aux = self.first
         while(aux.next != None):
-            if aux.data == data:
+            if aux.data[0] == data:
                 return aux
             aux = aux.next
-        if aux.data == data:
+        if aux.data[0] == data:
             return aux
         if self.overflow != None:
             return self.overflow.Search(data)
